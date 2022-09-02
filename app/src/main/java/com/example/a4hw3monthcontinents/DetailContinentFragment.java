@@ -38,17 +38,15 @@ public class DetailContinentFragment extends Fragment {
         tv_Country = view.findViewById(R.id.continent);
         flag = view.findViewById(R.id.flag);
 
-//        if(getArguments() != null) {
-//            Country country = (Country) getArguments().getSerializable("key1");
-//            tv_Country.setText(country.getName());
-//        }
 
+        int number = getArguments().getInt("key1");
+        continentNumber = number;
         loadData();
         CountryAdapter countryAdapter = new CountryAdapter(countries);
         recyclerView.setAdapter(countryAdapter);
     }
 
-    static void loadData() {
+    public void loadData() {
         countries = new ArrayList<>();
         switch (continentNumber) {
             case 0:

@@ -35,34 +35,33 @@ public class MainFragment extends Fragment implements OnItemClickListener {
 
     @Override
     public void onItemClick(int position) {
-        switch (position){
-            case 0:
-                DetailContinentFragment.continentNumber = 0;
-                break;
-            case 1:
-                DetailContinentFragment.continentNumber = 1;
-                break;
-            case 2:
-                DetailContinentFragment.continentNumber = 2;
-                break;
-            case 3:
-                DetailContinentFragment.continentNumber = 3;
-                break;
-            case 4:
-                DetailContinentFragment.continentNumber = 4;
-                break;
-            case 5:
-                DetailContinentFragment.continentNumber = 5;
-                break;
-        }
-//        int country = continentAdapter.getCountry(position);
-//        Bundle bundle = new Bundle();
-//        bundle.putSerializable("key1",country);
-//        DetailContinentFragment fragment = new DetailContinentFragment();
-//        fragment.setArguments(bundle);
+//        switch (position){
+//            case 0:
+//                DetailContinentFragment.continentNumber = 0;
+//                break;
+//            case 1:
+//                DetailContinentFragment.continentNumber = 1;
+//                break;
+//            case 2:
+//                DetailContinentFragment.continentNumber = 2;
+//                break;
+//            case 3:
+//                DetailContinentFragment.continentNumber = 3;
+//                break;
+//            case 4:
+//                DetailContinentFragment.continentNumber = 4;
+//                break;
+//            case 5:
+//                DetailContinentFragment.continentNumber = 5;
+//                break;
+//        }
+        Bundle bundle = new Bundle();
+        bundle.putInt("key1", position);
+        DetailContinentFragment fragment = new DetailContinentFragment();
+        fragment.setArguments(bundle);
 
         requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,
-                new DetailContinentFragment()).addToBackStack(null).commit();
+                fragment).addToBackStack(null).commit();
     }
 
     private void loadData() {
